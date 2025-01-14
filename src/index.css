@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply default styles to the body */
+body {
+  @apply font-sans text-base leading-normal min-w-[320px] min-h-screen m-0 bg-gray-100;
+}
+
+#root {
+  @apply max-w-7xl mx-auto p-6;
+}
