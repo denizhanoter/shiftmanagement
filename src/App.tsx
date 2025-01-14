@@ -1,20 +1,20 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ShiftSchedule from "./pages/ShiftSchedule";
 import EmployeeManagement from "./pages/EmployeeManagement";
 import ShiftSettings from "./pages/ShiftSettings";
-import Box from "@mui/material/Box";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
     <BrowserRouter future={{ v7_startTransition: true }}>
-        <Box sx={{ flexGrow: 1 }}>
-          <Routes>
-            <Route path='/vardiya-programi' element={<ShiftSchedule />} />
-            <Route path='/calisan-yonetimi' element={<EmployeeManagement />} />
-            <Route path='/vardiya-ayarlari' element={<ShiftSettings />} />
-            <Route path='/' element={<Navigate to='/vardiya-programi' />} />
-          </Routes>
-        </Box>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path='/' element={<Homepage />}>
+          <Route path='/Shift-Schedule' element={<ShiftSchedule />} />
+          <Route path='/Employee-Management' element={<EmployeeManagement />} />
+          <Route path='/Shift-Settings' element={<ShiftSettings />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
